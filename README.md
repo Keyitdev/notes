@@ -4,7 +4,7 @@
 
 ### Arch linux
 
-[Installing KVM, QEMU and Virt Manager on Arch Linux](./notes/Installing_KVM_QEMU_and_Virt_Manager_on_Arch_Linux)
+[Installing KVM, QEMU and Virt Manager on Arch Linux](./notes/Installing_KVM_QEMU_and_Virt_Manager_on_Arch_Linux.md)
 
 ## Polish
 
