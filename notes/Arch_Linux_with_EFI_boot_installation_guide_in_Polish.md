@@ -1,8 +1,8 @@
-Source: https://github.com/piogrzej/arch_install_guide_pl
-
-Author: https://github.com/piogrzej
-
-Last edited on: May 28, 2019
+>Author: [Keyitdev](https://github.com/keyitdev)\
+Source: [Keyitdev/notes](https://github.com/keyitdev/notes)\
+Orginal author: [piogrzej](https://github.com/piogrzej)\
+Orginal source: [piogrzej/arch_install_guide_pl](https://github.com/piogrzej/arch_install_guide_pl)\
+Last edited on: 28 May 2019
 
 # Arch Linux with EFI boot installation guide in Polish
 

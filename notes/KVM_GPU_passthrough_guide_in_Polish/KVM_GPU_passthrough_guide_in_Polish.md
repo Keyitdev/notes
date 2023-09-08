@@ -1,8 +1,8 @@
-Source: https://github.com/piogrzej/KVM_guide
-
-Author: https://github.com/piogrzej
-
-Last edited on: Feb 22, 2019
+>Author: [Keyitdev](https://github.com/keyitdev)\
+Source: [Keyitdev/notes](https://github.com/keyitdev/notes)\
+Orginal author: [piogrzej](https://github.com/piogrzej)\
+Orginal source: [piogrzej/KVM_guide](https://github.com/piogrzej/KVM_guide)\
+Last edited on: 22 Feb 2019
 
 # KVM GPU passthrough guide in Polish
 
