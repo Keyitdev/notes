@@ -2,7 +2,7 @@
 Source: [Keyitdev/notes](https://github.com/keyitdev/notes)\
 Last edited on: 9 Sep 2023
 
-# Installing KVM, QEMU and Virt Manager on Arch Linux
+# KVM, QEMU and Virt Manager installation on Arch Linux
 
 ### Install packages
 
