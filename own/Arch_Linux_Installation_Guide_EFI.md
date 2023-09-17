@@ -1,40 +1,65 @@
 >Author: [Keyitdev](https://github.com/keyitdev)\
 Source: [Keyitdev/notes](https://github.com/keyitdev/notes)\
-Last edited on: 14 Sep 2023
+Last edited on: 18 Sep 2023
 
 # Arch Linux Installation Guide EFI
 
 ### Connect to network
 
 ```bash
-ip a
-iwctl station wlan0 scan
-iwctl station wlan0 get-networks
-iwctl station wlan0 connect <NETOWRK NAME>
+iwctl device list
+iwctl station <DEVICE> scan
+iwctl station <DEVICE> get-networks
+iwctl station <DEVICE> connect <NETOWRK NAME>
 ```
 
-### Create partitions
+### Create disk partition table
 
-| Name | Type             | Size            | File system |
-| :--: | :---------------:| :-------------: | :----------:|
-| efi  | efi system       | at least 512M   | fat32       |
-| swap | linux swap       | 2x ram          | swap        |
-| root | linux filesystem | Remaining space | ext4        |
+> Example
+
+| Partition | Name | Type             | Size            | File system |
+| ----------| ---- | -----------------| --------------- | ------------|
+| sda1      | efi  | efi system       | at least 512M   | fat32       |
+| sda2      | swap | linux swap       | 2x ram          | swap        |
+| sda3      | root | linux filesystem | Remaining space | ext4        |
+| sda4      | home | linux filesystem | Remaining space | ext4        |
+
+Choose the `gpt` partition type.
 
 ```bash
 lsblk
 cfdisk /dev/sda
 ```
+
+### Format partitions
+
 ```bash
 mkfs.fat -F32 /dev/sda1
-
+```
+```bash
 mkswap /dev/sda2
 swapon /dev/sda2
-
+```
+```bash
 mkfs.ext4 /dev/sda3
-mount /dev/sda3 /mnt
-
+```
+> `home` is optional.
+```bash
+mkfs.ext4 /dev/sda4
+```
+```bash
 lsblk
+```
+
+### Mount partitions
+
+```bash
+mount /dev/sda3 /mnt
+```
+> `home` is optional.
+```bash
+mkdir /mnt/home
+mount /dev/sda4 /mnt/home
 ```
 
 ### Install arch system and generate fstab file
@@ -77,7 +102,10 @@ echo <HOSTNAME> > /etc/hostname
 echo "127.0.0.1       localhost" >> /etc/hosts
 echo "::1             localhost" >> /etc/hosts
 echo "127.0.1.1       <HOSTNAME>" >> /etc/hosts
-# echo "127.0.1.1       <HOSTNAME>.localdomain <HOSTNAME>" >> /etc/hosts
+```
+Optionally you can change last line to:
+```bash
+echo "127.0.1.1       <HOSTNAME>.localdomain <HOSTNAME>" >> /etc/hosts
 ```
 
 ### Set root password
@@ -86,7 +114,7 @@ echo "127.0.1.1       <HOSTNAME>" >> /etc/hosts
 passwd
 ```
 
-### Install GRUB
+### Install bootloader
 
 ```bash
 pacman -S grub efibootmgr
@@ -97,8 +125,7 @@ mount /dev/sda1 /boot/efi
 lsblk
 ```
 ```bash
-grub-install --target=x86_64-efi --bootloader-id=GRUB \
---efi-directory=/boot/efi --removable
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -116,14 +143,6 @@ passwd <USERNAME>
 pacman -S dhcpcd iwd
 systemctl enable dhcpcd.service
 systemctl enable iwd.service
-```
-
-### Install gpu drivers
-
-```bash
-pacman -S xf86-video-amdgpu                    # amd
-pacman -S nvidia nvidia-settings nvidia-utils  # nvidia
-pacman -S xf86-video-intel                     # intel
 ```
 
 ### Exit
