@@ -47,9 +47,7 @@ SigLevel = TrustAll
 
 ### Sources
 
+https://wiki.archlinux.org/title/Arch_Linux_Archive
+
 https://www.rdeeson.com/weblog/176/how-to-rollback-a-system-update-on-arch-linux
-
-https://archive.archlinux.org/repos/
-
-https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING
 
