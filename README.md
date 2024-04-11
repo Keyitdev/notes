@@ -4,11 +4,13 @@
 
 ### Arch linux
 
-[Arch Linux Installation Guide EFI](./own/Arch_Linux_Installation_Guide_EFI.md)
+[Arch Linux installation guide (EFI)](./own/Arch_Linux_Installation_Guide_EFI.md)
 
-[Enabling Hibernation in Arch Linux (using swap partition, hibernation to disk)](./own/Enabling_Hibernation_in_Arch_Linux.md)
+[Enabling hibernation in Arch Linux (using swap partition, hibernation to disk)](./own/Enabling_Hibernation_in_Arch_Linux.md)
 
 [KVM, QEMU and Virt Manager installation on Arch Linux](./own/KVM_QEMU_and_Virt_Manager_installation_on_Arch_Linux.md)
+
+[Rollback a system update on Arch Linux](./own/Rollback_a_System_Update_on_Arch_Linux.md)
 
 ## Polish
 
