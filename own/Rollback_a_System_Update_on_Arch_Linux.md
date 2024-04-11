@@ -4,13 +4,13 @@ Last edited on: 11 Apr 2024
 
 # Rollback a system update on Arch Linux
 
-### Install packages
+### Back up mirrorlist
 
 ```sh
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 ```
 
-### Edit mirrorlist
+### Edit mirrorlist (see available [archives](https://archive.archlinux.org/repos/))
 
 ```sh
 echo 'Server=https://archive.archlinux.org/repos/2024/04/11/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist
@@ -41,7 +41,7 @@ Or  set `SigLevel` to `TrustAll` in `/etc/pacman.conf`.
 SigLevel = TrustAll
 ```
 
-**Warning:** The `SigLevel = TrustAll` option exists for debugging purposes and makes it very easy to trust keys that have not been verified. [https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING](https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING)
+**Warning:** The `SigLevel = TrustAll` option exists for debugging purposes and makes it very easy to trust keys that have not been verified. [Package and database signature checking](https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING).
 
 **Change it back when you are done.**
 
@@ -49,4 +49,7 @@ SigLevel = TrustAll
 
 https://www.rdeeson.com/weblog/176/how-to-rollback-a-system-update-on-arch-linux
 
+https://archive.archlinux.org/repos/
+
 https://man.archlinux.org/man/pacman.conf.5#PACKAGE_AND_DATABASE_SIGNATURE_CHECKING
+
