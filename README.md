@@ -14,6 +14,8 @@
 
 [Secure boot Arch Linux](./own/Secure_Boot_Arch_Linux.md)
 
+[Wpa_supplicant configuration with EAP on Arch Linux](./own/Wpa_supplicant_configuration_with_EAP_on_Arch_Linux)
+
 ## Polish
 
 ### Arch linux
