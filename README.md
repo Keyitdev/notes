@@ -12,6 +12,8 @@
 
 [Rollback a system update on Arch Linux](./own/Rollback_a_System_Update_on_Arch_Linux.md)
 
+[Secure boot Arch Linux](./own/Secure_Boot_Arch_Linux.md)
+
 ## Polish
 
 ### Arch linux
