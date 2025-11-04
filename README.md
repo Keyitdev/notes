@@ -4,7 +4,7 @@
 
 ### Arch linux
 
-[Arch Linux installation guide (UEFI, LVM on LUKS, Secure boot)](./own/Arch_Linux_Installation_Guide_UEFI_LVM_on_LUKS_Secure_Boot)
+[Arch Linux installation guide (UEFI, LVM on LUKS, Secure boot)](./own/Arch_Linux_Installation_Guide_UEFI_LVM_on_LUKS_Secure_Boot.md)
 
 [Arch Linux installation guide (EFI)](./own/Arch_Linux_Installation_Guide_EFI.md)
 
