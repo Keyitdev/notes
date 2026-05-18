@@ -1,6 +1,6 @@
 >Author: [Keyitdev](https://github.com/keyitdev)\
 Source: [Keyitdev/notes](https://github.com/keyitdev/notes)\
-Last edited on: 29 Sep 2025
+Last edited on: 18 May 2026
 
 # Arch Linux Installation Guide - UEFI, LVM on LUKS, Secure Boot
 
@@ -23,7 +23,7 @@ Create disk partition table.
 | Partition | Name  | Encryption  | Type                     | Size            | File system |
 | ----------| ------|-------------|--------------------------|-----------------|-------------|
 | sda1      | efi   | unencrypted | efi system               | 512M            | fat32       |
-| sda2      | boot  | unencrypted | linux swap               | 1G              | swap        |
+| sda2      | boot  | unencrypted | linux swap               | 1G              | ext4        |
 | sda3      | luks2 | encrypted   | LUKS encrypted partition | Remaining space | ext4        |
 
 Choose the `gpt` partition type.
@@ -67,9 +67,9 @@ lsblk
 
 Mount partitions.
 ```sh
+mount /dev/vg0/root /mnt
 mount --mkdir /dev/sda1 /mnt/efi
 mount --mkdir /dev/sda2 /mnt/boot
-mount /dev/vg0/root /mnt
 ```
 
 Install arch system and generate fstab file
